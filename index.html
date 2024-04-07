@@ -52,7 +52,7 @@
             ><i class="bx bxl-linkedin"></i
           ></a>
         </div>
-        <a href="#" class="btn"> Download CV</a>
+        <a href="#" id="downloadCV" class="btn"> Download CV</a>
       </div>
 
       <div class="home-img">
@@ -195,26 +195,29 @@
       </div>
     </section>
 
-    <section class="contact" id="contact">
+    <section class="contact">
       <h2 class="heading">Contact <span>Me</span></h2>
-      <form action="#">
+      <div class="alert"></div>
+      <form action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="apikey" value="8c634afb-f9b2-4000-bbf7-b4a31b20478b">
         <div class="input-box">
-          <input type="text" placeholder="Full Name" />
-          <input type="email" placeholder="Email Address" />
+          <input type="text" placeholder="Full Name" name="name" id="name" required/>
+          <input type="email" placeholder="Email Address"name="email" id="email" required />
         </div>
 
         <div class="input-box">
-          <input type="number" placeholder="Mobile Number" />
-          <input type="text" placeholder="Email Subject" />
+          <input type="number" placeholder="Mobile Number" name="phone" id="phone" required/>
+          <input type="text" placeholder="Email Subject" name="subject" id="subject" required/>
         </div>
         <textarea
-          name=""
-          id=""
+          name="message"
+          id="message"
           cols="30"
           rows="10"
-          placeholder="Your Message"
+          placeholder="Your Message" required
         ></textarea>
-        <input type="submit" value="Send Message" class="btn" />
+        <input type="hidden" name="redirect" value="https://web3forms.com/success">
+        <button type="submit"  class="btn" >Send Message</button>
       </form>
     </section>
 
@@ -229,6 +232,7 @@
 
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src= "https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
     <script src="./script.js"></script>
   </body>
 </html>
